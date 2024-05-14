@@ -1,0 +1,27 @@
+.tableContainer{
+    margin-top: 50px;
+    /* box-shadow: 5px 5px 10px rgba(0,0,0,0.2); */
+    border-radius: 10px;
+border-collapse: collapse;
+border: black;
+    align-items: center;
+  }
+  
+  .tableContainer table thead tr{
+    background-color: #b4d3d5;
+  }
+  
+  
+  .tableContainer table thead tr th,
+  .tableContainer table tbody tr td{
+
+    padding: 7px;
+    text-align: center;
+  
+  }
+  .tableContainer table tbody tr{
+    border: 1px solid #c9c5c2;
+  }
+  .tableContainer table tbody tr td{
+    border-bottom: 1px solid #c9c5c2;
+  }

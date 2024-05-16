@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import '../css/register.css';
 
 function Studentlogin({}) {
@@ -60,7 +60,8 @@ function Studentlogin({}) {
             required
           />
         </div>
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin}>Login</button><br/>
+      <label><Link to="/">Go to staff login</Link></label>
     </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </>
   );

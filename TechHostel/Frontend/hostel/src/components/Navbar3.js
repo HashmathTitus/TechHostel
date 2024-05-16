@@ -24,6 +24,8 @@ function Navbar3() {
 			    
 				<Link to="/payment">Expenses</Link>
 				<Link to="/payment">Update E-wallet</Link>
+				<Link to="/getpay">Payments verification</Link>
+
 				<button className="logout-button" onClick={handleLogout}>
                     <FontAwesomeIcon icon={faSignOutAlt} />
                 </button>

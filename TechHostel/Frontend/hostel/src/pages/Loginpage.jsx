@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/register.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import Footer from '../components/Footer';
 
 
@@ -74,6 +74,7 @@ const Loginpage = () => {
         </div>
         <button type="submit">Login</button>
       </form>
+      <label><Link to="/stlog">Go to student login</Link></label>
     </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     <Footer/>
     </>

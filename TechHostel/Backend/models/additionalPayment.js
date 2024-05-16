@@ -9,7 +9,7 @@ const schemaData = mongoose.Schema({
   nic:{
     type:String,
     required:true,
-    unique:true
+
   },
 
   issue:{

@@ -16,6 +16,7 @@ axios.defaults.baseURL = "http://localhost:8000/"
 
 const Paymentmanagement=()=> {
 
+  const [deposited, setDeposited] = useState(0);
   const [addSection,setAddSection] = useState(false)
   const [searchTerm, setSearchTerm] = useState('');
   const [editSection,setEditSection] = useState(false)
@@ -99,6 +100,18 @@ const Paymentmanagement=()=> {
 
 useEffect(()=>{
     getFetchData();
+
+    const fetchDepositedAmount = async () => {
+      try {
+        const response = await axios.get("/api/deposited_amount"); // Adjust API endpoint
+        if (response.data.success) {
+          setDeposited(response.data.amount);
+        }
+      } catch (error) {
+        console.error("Error fetching deposited amount:", error);
+      }
+    };
+    fetchDepositedAmount();
   },[]);
 
     //search filer
@@ -160,7 +173,7 @@ useEffect(()=>{
 
   return (
     <>
-     <BalanceUI totalPCost={totalPCost}/>
+     <BalanceUI deposited={deposited} totalPCost={totalPCost}/>
     <div className = "container" >
       <h3>Personal Expenses</h3>
       <button className = "btn btn-add" onClick={()=>setAddSection(true)}>Add Expenses</button> 
@@ -243,8 +256,8 @@ useEffect(()=>{
     </div>
     <br/><br/>
     <InquiryMessage/>
-    <br/><br/>
-    {/* <Footer/> */}
+    <br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/>
+    <Footer/>
     </>
   );
  

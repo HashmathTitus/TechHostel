@@ -10,7 +10,7 @@ const PaymentSchema = new mongoose.Schema({
     date: Date,
     status: {
       type: String,
-      enum: ['in', 'out'], 
+      enum: ['verified', 'not_verified'], 
       default: 'not_verified' 
     }
   })

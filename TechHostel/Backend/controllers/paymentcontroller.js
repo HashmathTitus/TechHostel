@@ -116,4 +116,28 @@ const verificationDetails=  async (req, res) => {
     }
   };
 
-module.exports={ewalletCreate,addExpenses,getExpense,createExpense,deleteExpense,updateExpense,verificationDetails}
+  const getAllPayments = async (req, res) => {
+    try {
+      const payments = await Payment.find();
+      res.json(payments);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
+  
+  // Verify payment
+  const verifyPayment = async (req, res) => {
+    try {
+      const payment = await Payment.findById(req.params.id);
+      if (!payment) {
+        return res.status(404).json({ message: 'Payment not found' });
+      }
+      payment.status = 'verified';
+      await payment.save();
+      res.json({ message: 'Payment verified successfully' });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
+
+module.exports={getAllPayments,verifyPayment,ewalletCreate,addExpenses,getExpense,createExpense,deleteExpense,updateExpense,verificationDetails}

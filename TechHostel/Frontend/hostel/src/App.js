@@ -20,6 +20,7 @@ import Healthinfo from "./pages/Healthinfo";
 import PaymentVerification from "./pages/PaymentVerification"
 import Gethealthinfos from "./pages/Gethealthinfos";
 import PEwallet from "./pages/pewallet";
+import PaymentComponent from "./pages/PaymentComponent";
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           <Route path="/healthinfo" element={<Healthinfo  />}/>
           <Route path="/gethealthinfo" element={<Gethealthinfos  />}/>
           <Route path="/pewallet" element={<PEwallet/>}/>
+          <Route path="/getpay" element={<PaymentComponent/>}/>
 
         </Routes>
       </BrowserRouter>

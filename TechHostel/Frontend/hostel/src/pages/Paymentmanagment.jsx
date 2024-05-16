@@ -5,7 +5,7 @@ import FormTable from '../components/Formtable'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import Navbar3 from '../components/Navbar3';
-
+import Footer from '../components/Footer'
 
 axios.defaults.baseURL = "http://localhost:8000/"
 
@@ -228,6 +228,8 @@ const downloadPDF = () => {
         <button className = "report" onClick={downloadPDF}>Download Report</button>
       </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
+    <br/><br/><br/><br/><br/><br/> <br/><br/><br/><br/><br/><br/>
+    <Footer/>
     </>
   );
  
